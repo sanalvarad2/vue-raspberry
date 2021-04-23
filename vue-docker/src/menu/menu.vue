@@ -1,6 +1,6 @@
 <template>
-  <b-container-fluid>
-    <b-container-fluid class="fixed-top">
+  <b-container fluid>
+    <b-container fluid class="fixed-top p-0">
       <b-navbar toggleable="lg" type="dark" variant="danger" >
         <b-navbar-brand href="#">¡DeliverEat!</b-navbar-brand>
 
@@ -44,11 +44,11 @@
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
-    </b-container-fluid>
-    <b-container class="pt-4">
+    </b-container>
+    <b-container fluid style="margin-top:5rem">
       <slot />
     </b-container>
-  </b-container-fluid>
+  </b-container>
 </template>
 
 <script>
