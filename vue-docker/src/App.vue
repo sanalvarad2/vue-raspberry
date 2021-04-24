@@ -10,6 +10,10 @@ import menuTemplate from "./menu/menu";
 
 export default {
   components: { menuTemplate },
+  data() {
+    return {};
+  },
+  methods: {},
 };
 </script>
 
@@ -20,7 +24,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #7a7580;
 }
-
+.b-card {
+  border-radius: 15px !important;
+  overflow: hidden;
+}
+.b-card.imgCard {
+  max-height: 200px;
+  max-width: 1024px;
+}
 .container-fluid {
   padding-right: 1% !important;
   padding-left: 1% !important;

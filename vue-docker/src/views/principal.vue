@@ -1,82 +1,47 @@
 <template>
-  
-    <b-container fluid>
-      <b-card no-body style="border-radius:15px; overflow:hidden">
-        <b-card-body class="p-0">
-          <!-- <b-card-title></b-card-title> -->
-          <!-- <b-card-sub-title class="mb-2">Card Sub Title</b-card-sub-title> -->
-          <!-- <b-card-text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </b-card-text> -->
-          <!-- <b-jumbotron
-            header="BootstrapVue"
-            lead="Bootstrap v4 Components for Vue.js 2"
-          >
-            <p>For more information visit website</p>
-            <b-button variant="primary" href="#">More Info</b-button>
-          </b-jumbotron> -->
-          <b-carousel
-            id="carousel-1"
-            
-            
-            :interval="4000"
-            img-width="1024"
-      img-height="480"
-            background="#ababab"
-           
-            style="text-shadow: 1px 1px 2px #333;"
-          >
-            <!-- Text slides with image -->
-            <b-carousel-slide
-              caption="First slide"
-              text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-              img-src="https://picsum.photos/1024/480/?image=52"
-            ></b-carousel-slide>
-
-            <!-- Slides with custom text -->
-            <b-carousel-slide
-              img-src="https://picsum.photos/1024/480/?image=54"
-            >
-              <h1>Hello world!</h1>
-            </b-carousel-slide>
-
-            <!-- Slides with image only -->
-            <b-carousel-slide
-              img-src="https://picsum.photos/1024/480/?image=58"
-            ></b-carousel-slide>
-
-            <!-- Slides with img slot -->
-            <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-            <b-carousel-slide>
-              <template #img>
-                <img
-                  class="d-block img-fluid w-100"
-                  width="1024"
-                  height="480"
-                  src="https://picsum.photos/1024/480/?image=55"
-                  alt="image slot"
-                />
-              </template>
-            </b-carousel-slide>
-
-            <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-            <b-carousel-slide
-              caption="Blank Image"
-              img-blank
-              img-alt="Blank image"
-            >
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse eros felis, tincidunt a tincidunt eget, convallis
-                vel est. Ut pellentesque ut lacus vel interdum.
-              </p>
-            </b-carousel-slide>
-          </b-carousel>
-        </b-card-body>
-      </b-card>
-    </b-container>
-  
+  <b-container fluid="md">
+    <b-card no-body class="b-card imgCard">
+      <b-card-body class="p-0">
+        <b-carousel
+          id="carousel-1"
+          :interval="4000"
+          img-width="1024"
+          img-height="200"
+          background="#ababab"
+          style="text-shadow: 1px 1px 2px #333"
+        >
+          <!-- Text slides with image -->
+          <b-carousel-slide
+            caption="First slide"
+            text="Nulla vitae elit libero, a pharetra augue mollis interdum."
+            img-src="https://picsum.photos/1024/480/?image=52"
+          ></b-carousel-slide>
+        </b-carousel>
+      </b-card-body>
+    </b-card>
+    <b-card no-body class="mt-4 b-card imgCard">
+      <b-card-body>
+        <div class="row t-aling-center">
+          <div class="col-sm-6">
+            <router-link to="/" class="btn rl-circle">
+              <div class="row img-center h4">
+                <b-icon icon="shop" aria-hidden="true"> </b-icon>
+              </div>
+              <div class="row">Explorar Tiendas adheridas</div>
+            </router-link>
+          </div>
+          <div class="col-sm-6">
+            <router-link to="/LoQueSea" class="btn rl-circle">
+              <div class="row img-center h4">
+                <b-icon icon="bag" aria-hidden="true"> </b-icon>
+              </div>
+              <div class="row" style="justify-content: space-around">Pedir lo que sea!</div>
+            </router-link>
+          </div>
+        </div>
+      </b-card-body>
+    </b-card>
+  </b-container>
 </template>
 
 <script>
@@ -98,4 +63,27 @@ export default {
 </script>
 
 <style>
+
+
+.rl-circle {
+  width: 100px !important;
+  height: 100px !important;
+  padding: 10px 10px !important;
+  line-height: 1.33 !important;
+  border-radius: 50% !important;
+  background-color: #ffffff !important;
+  text-align: center !important;
+  font-size: 10px !important;
+  border-width: 2px !important;
+  border-color: #00abe2 !important;
+  display: inline-block !important;
+}
+
+.t-aling-center {
+  text-align: center;
+}
+.img-center {
+  align-items: center !important;
+  justify-content: center !important;
+}
 </style>

@@ -1,8 +1,8 @@
 <template>
   <b-container fluid>
-    <b-container fluid class="fixed-top p-0">
-      <b-navbar toggleable="lg" type="dark" variant="danger" >
-        <b-navbar-brand href="#">¡DeliverEat!</b-navbar-brand>
+    <b-container fluid class="topAbs p-0">
+      <b-navbar toggleable="lg" type="dark" variant="danger">
+        <b-navbar-brand href="/">¡DeliverEat!</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -45,21 +45,50 @@
         </b-collapse>
       </b-navbar>
     </b-container>
-    <b-container fluid style="margin-top:5rem">
-      <slot />
-    </b-container>
+    <vue-pull-refresh :onRefresh="onRefresh" :config="config" style="z-index:1000;">
+      <b-container fluid style="margin-top: 1.5rem">
+        <slot />
+      </b-container>
+    </vue-pull-refresh>
   </b-container>
 </template>
 
 <script>
+import VuePullRefresh from "vue-pull-refresh";
+
 export default {
+  components: { "vue-pull-refresh": VuePullRefresh },
   data() {
     return {
       nombreUsuario: "Santiago",
+      config: {
+        errorLabel: "No se pudo recargar",
+        startLabel: "Recargar",
+        readyLabel: "Soltar para Recargar",
+        loadingLabel: "Cargando",
+      },
     };
+  },
+  methods: {
+    onRefresh: function () {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve();
+          location.reload();
+        }, 1000);
+      });
+    },
   },
 };
 </script>
 
 <style>
+.topAbs {
+  top: 0;
+  right: 0;
+  left: 0;
+  position: relative;
+  z-index: 1000;
+  display: block;
+}
 </style>
